@@ -8,85 +8,88 @@ st.set_page_config(
 )
 
 # ----------------------------------------------------
-# ADVANCED STYLING LAYER
+# ADVANCED STYLING LAYER (ISOLATED VARIABLE FIX)
 # ----------------------------------------------------
-st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    
-    .stApp {
-        font-family: 'Inter', sans-serif;
-    }
-    
-    .header-container {
-        background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-        padding: 40px 30px;
-        border-radius: 16px;
-        color: #FFFFFF;
-        margin-bottom: 30px;
-    }
-    .main-title { 
-        font-size: 40px; 
-        font-weight: 700; 
-        color: #FFFFFF; 
-        margin: 0;
-    }
-    .subtitle { 
-        font-size: 20px; 
-        color: #BFDBFE; 
-        margin-top: 8px;
-        font-weight: 500;
-    }
-    
-    .section-head { 
-        font-size: 24px; 
-        font-weight: 700; 
-        color: #0F172A; 
-        margin-top: 40px; 
-        margin-bottom: 20px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #E2E8F0;
-    }
-    
-    .html-card { 
-        background-color: #F8FAFC; 
-        padding: 24px; 
-        border-radius: 12px; 
-        border: 1px solid #E2E8F0;
-        margin-bottom: 24px;
-    }
-    
-    .card-title {
-        font-size: 20px;
-        font-weight: 600;
-        color: #1E3A8A;
-        margin-bottom: 6px;
-    }
-    
-    .badge-container {
-        margin-top: 8px;
-        margin-bottom: 12px;
-    }
-    .html-badge { 
-        display: inline-block; 
-        background-color: #EFF6FF; 
-        color: #1E40AF; 
-        padding: 4px 12px; 
-        border-radius: 9999px; 
-        margin-right: 6px; 
-        margin-bottom: 6px;
-        font-size: 13px; 
-        font-weight: 600; 
-        border: 1px solid #BFDBFE;
-    }
-    .tag-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: #475569;
-        margin-top: 10px;
-    }
-    </style>
-""", unsafe_allowed_html=True)
+css_style = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700&display=swap');
+
+.stApp {
+    font-family: 'Inter', sans-serif;
+}
+
+.header-container {
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+    padding: 40px 30px;
+    border-radius: 16px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+.main-title { 
+    font-size: 40px; 
+    font-weight: 700; 
+    color: #FFFFFF; 
+    margin: 0;
+}
+.subtitle { 
+    font-size: 20px; 
+    color: #BFDBFE; 
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.section-head { 
+    font-size: 24px; 
+    font-weight: 700; 
+    color: #0F172A; 
+    margin-top: 40px; 
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.html-card { 
+    background-color: #F8FAFC; 
+    padding: 24px; 
+    border-radius: 12px; 
+    border: 1px solid #E2E8F0;
+    margin-bottom: 24px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 6px;
+}
+
+.badge-container {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+.html-badge { 
+    display: inline-block; 
+    background-color: #EFF6FF; 
+    color: #1E40AF; 
+    padding: 4px 12px; 
+    border-radius: 9999px; 
+    margin-right: 6px; 
+    margin-bottom: 6px;
+    font-size: 13px; 
+    font-weight: 600; 
+    border: 1px solid #BFDBFE;
+}
+.tag-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 10px;
+}
+</style>
+"""
+
+# Render the isolated styling variable safely
+st.markdown(css_style, unsafe_allowed_html=True)
 
 # ----------------------------------------------------
 # HERO BANNER
@@ -100,8 +103,8 @@ st.markdown("""
 
 st.write(
     "I specialize in bridging the gap between intelligent data-driven solutions, full-stack development, "
-    "and complex enterprise environments[cite: 4, 5]. With hands-on experience in workflow optimization and a core focus "
-    "on computer vision and automated reasoning[cite: 4, 13, 26], I love building technical tools that deliver immediate impact."
+    "and complex enterprise environments. With hands-on experience in workflow optimization and a core focus "
+    "on computer vision and automated reasoning, I love building technical tools that deliver immediate impact."
 )
 
 # Navigation CTA Buttons
@@ -166,11 +169,11 @@ st.markdown("""
             Tech Stack: Python, OpenCV, YOLOv8 | Academic Project
         </div>
         <p style="color: #334155; font-size: 15px; line-height: 1.6;">
-            Built a real-time computer vision surveillance platform running advanced tracking algorithms and YOLOv8 models for automated human presence monitoring[cite: 24, 26].
+            Built a real-time computer vision surveillance platform running advanced tracking algorithms and YOLOv8 models for automated human presence monitoring.
         </p>
         <p style="color: #334155; font-size: 15px; line-height: 1.6;">
-            • Engineered granular alert generation logic to minimize false-positive anomalies[cite: 27].<br>
-            • Structured a secure, high-efficiency evidence storage backend to streamline post-event investigation pipelines[cite: 27].
+            • Engineered granular alert generation logic to minimize false-positive anomalies.<br>
+            • Structured a secure, high-efficiency evidence storage backend to streamline post-event investigation pipelines.
         </p>
     </div>
 """, unsafe_allowed_html=True)
@@ -182,11 +185,11 @@ st.markdown("""
             Tech Stack: Python, Streamlit, IBM watsonx.ai | IBM Hackathon Winner
         </div>
         <p style="color: #334155; font-size: 15px; line-height: 1.6;">
-            Developed and successfully packaged an AI co-pilot web application within a high-intensity 48-hour hackathon sprint to completely automate messy software error log analysis[cite: 20, 22].
+            Developed and successfully packaged an AI co-pilot web application within a high-intensity 48-hour hackathon sprint to completely automate messy software error log analysis.
         </p>
         <p style="color: #334155; font-size: 15px; line-height: 1.6;">
-            • Seamlessly integrated a dynamic Streamlit frontend interface with LLM endpoints via the IBM watsonx API[cite: 22].<br>
-            • Enabled development teams to capture system exceptions and receive real-time, plain-English bug documentation along with instant syntax updates[cite: 23].
+            • Seamlessly integrated a dynamic Streamlit frontend interface with LLM endpoints via the IBM watsonx API.<br>
+            • Enabled development teams to capture system exceptions and receive real-time, plain-English bug documentation along with instant syntax updates.
         </p>
     </div>
 """, unsafe_allowed_html=True)
@@ -196,12 +199,12 @@ st.markdown("""
 # ----------------------------------------------------
 st.markdown('<div class="section-head">💼 Professional Experience</div>', unsafe_allowed_html=True)
 
-st.markdown("**Associate Analyst** | **Deloitte USI** *(Oct 2024 - Mar 2025)* [cite: 15, 16]")
+st.markdown("**Associate Analyst** | **Deloitte USI** *(Oct 2024 - Mar 2025)*")
 st.write(
     "- Operated directly within complex Workday ERP system environments executing configuration updates, "
-    "automated process flows, and critical data validation pipelines[cite: 17].\n"
+    "automated process flows, and critical data validation pipelines.\n"
     "- Extracted and generated high-impact analytical reports, tracking down software bugs and maintaining "
-    "database accuracy across functional units[cite: 18]."
+    "database accuracy across functional units."
 )
 
 st.markdown("---")
@@ -214,13 +217,13 @@ col_edu, col_vol = st.columns(2)
 with col_edu:
     st.markdown('<div class="section-head" style="margin-top:10px;">🎓 Education</div>', unsafe_allowed_html=True)
     st.markdown("**MCA (AI / ML)**")
-    st.write("Ramdeobaba University, Nagpur (Expected 2027) | Score: 70% [cite: 29]")
+    st.write("Ramdeobaba University, Nagpur (Expected 2027) | Score: 70%")
     st.markdown("**B.Sc. in Computer Science**")
-    st.write("Dr. Ambedkar College, Nagpur (Graduated 2024) | Score: 69% [cite: 30, 31]")
+    st.write("Dr. Ambedkar College, Nagpur (Graduated 2024) | Score: 69%")
 
 with col_vol:
     st.markdown('<div class="section-head" style="margin-top:10px;">🌱 Impact & Interests</div>', unsafe_allowed_html=True)
     st.markdown("**Volunteer Work**")
-    st.write("Dedicated volunteer at *Rise for Tails NGO*, Nagpur since 2020 supporting community animal welfare[cite: 40].")
+    st.write("Dedicated volunteer at *Rise for Tails NGO*, Nagpur since 2020 supporting community animal welfare.")
     st.markdown("**Athletics & Hobbies**")
-    st.write("Competitive basketball player, long-distance marathon runner, and basic German language explorer[cite: 41, 42].")
+    st.write("Competitive basketball player, long-distance marathon runner, and basic German language explorer.")
